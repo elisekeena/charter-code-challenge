@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react'
-import MovieList from './movieList';
-
+import HomePage from './HomePage';
 
 function App() {
     const [movieData, setmovieData] = useState([]);
+    const [genresData, setGenresData] = useState([]);
 
     useEffect(() => {
       fetch("https://code-challenge.spectrumtoolbox.com/api/movies", { 
@@ -12,19 +12,28 @@ function App() {
       )
       .then(res => res.json())
       .then(data => {
+        // set movie data
         setmovieData(data["data"])
+        // set genre data
+        setGenresData(getGenres(data["data"]))
     })}, [setmovieData]);
-  
-    function getLatestRecipeData(data){
-        setmovieData(movieData => [...movieData, data]);
+    console.log(movieData)
+    function getGenres(data){
+        // get unique list of genres by double looping through
+        // movies > genres
+        var result = []
+        data.forEach(movie => {
+            movie.genres.forEach(genre => {
+                if (!result.includes(genre)) {
+                    result.push(genre)
+                }
+            })
+        });
+        return result
     };
-    
-  console.log("hello world")
-  console.log(movieData)
     return (
       <div>
-          <MovieList movieData={movieData} />
-            <h1>Hello </h1>
+          <HomePage  movieData={movieData} genresData={genresData}/>
       </div>
     )
   }

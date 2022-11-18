@@ -11,15 +11,11 @@ const inputStyles = {
 };
 
 function Search({searchInput, setSearchInput}) {
-    
     function handleChange(e) {
         setSearchInput(e.target.value);
     }
-
-
   return (
     <div className= "searchButton">
-        
         <input style={inputStyles} onChange={handleChange} type="text" placeholder="  Search a movie ..." name="search" value={searchInput} />
     </div>
 
