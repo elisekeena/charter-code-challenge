@@ -17,7 +17,7 @@ function App() {
         // set genre data
         setGenresData(getGenres(data["data"]))
     })}, [setmovieData]);
-    console.log(movieData)
+   
     function getGenres(data){
         // get unique list of genres by double looping through
         // movies > genres
@@ -33,8 +33,7 @@ function App() {
     };
     return (
       <div>
-          <HomePage  movieData={movieData} genresData={genresData}/>
-          
+          <HomePage  movieData={movieData} genresData={genresData}/>  
       </div>
     )
   }

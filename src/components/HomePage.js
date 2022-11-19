@@ -25,7 +25,6 @@ function HomePage({movieData, genresData}) {
     
     return (
       <div style={{textAlign: "center"}}>
-
         <h1 className = "tagName" >CINEFLIX </h1>
         <hr></hr>
         <Search searchInput={searchInput} setSearchInput={setSearchInput} />
@@ -33,9 +32,7 @@ function HomePage({movieData, genresData}) {
         {result.length === 0 && <h1 style={{textAlign: "center", color: "white"}}> No results were found. </h1> }
         {(searchInput === "" && filterGenre === "") ? <MovieList movieData={movieData}/> : <MovieList movieData={result} />}
         <Footer/>
-        </div>
-         
+      </div>   
     )
-  
-    }
+}
   export default HomePage
