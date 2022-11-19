@@ -1,14 +1,5 @@
 import React from 'react'
 
-const inputStyles = {
-  padding: "12px",
-  border: "3px solid #f8c146",
-  boxShadow: "0px 0px 0px",
-  borderColor: "#f8c146",
-  outline: "10px",
-  borderRadius: "25px",
-  width: "35%"
-};
 
 function Filter({filterGenre, setFilterGenre, genresData}) {
     function handleChange(e) {
@@ -23,10 +14,11 @@ function Filter({filterGenre, setFilterGenre, genresData}) {
     }  
 
   return (
-    <div className= "searchButton" style={inputStyles}>       
-        <select onChange={handleChange} value={filterGenre} >
+    <div>       
+        <select className= "inputStyles" onChange={handleChange}>
+          <option name="filter" value={filterGenre}> Genres</option>
         {displayGenres(genresData)}
-		</select>
+         </select>
 
     </div>
 

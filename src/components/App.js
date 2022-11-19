@@ -34,6 +34,7 @@ function App() {
     return (
       <div>
           <HomePage  movieData={movieData} genresData={genresData}/>
+          
       </div>
     )
   }

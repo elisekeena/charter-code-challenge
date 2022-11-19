@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import SingleMovie from './singleMovie';
-// import { Link } from "react-router-dom";
+
 
 function MovieList({movieData}) {
     const [showModal, setShowModal] = useState(false);
@@ -20,24 +20,21 @@ function MovieList({movieData}) {
         } 
         
         return (
-          <div key={movie.id} className="card">
+          <div className="grow" key={movie.id}>
           <img style={{height: "236.29px"}} 
                src={filePath} 
-               alt={movie.title} onClick={() => openModal(movie)} />
-          <h4 className='eggName'>{movie.id}</h4>
-          <h4>{movie.title}</h4>
+               alt={movie.title} />
+          <h4 className="homeFont"  onClick={() => openModal(movie)}>{movie.title}</h4>
           </div>
         )
-        
       })
 
   return (
-    <div className="grow">
-      <div className='cards lists'>
+    
+      <div className="test">
         {showModal ? <SingleMovie setShowModal={setShowModal} movie={selectedMovie}/> : null}
         {lists}
       </div>
-    </div>
    
   )
 }
