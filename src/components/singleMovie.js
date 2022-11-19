@@ -1,5 +1,4 @@
 import React, { } from 'react';
-import Footer from './Footer';
 
 
 function SingleMovie({setShowModal, movie}) {
@@ -30,12 +29,12 @@ return (
     <h3> {movie.id}</h3>
     <h3> {movie.title}</h3>
     <h3>Genres:</h3>
-    <ul > {movie.genres.map((genre,idx) =>
+    <ul style={{paddingLeft: "0px"}}> 
+        {movie.genres.map((genre,idx) =>
         <li className ="genreList" key={idx}>{genre}</li>
         )}
     </ul>
     </div>
-    <Footer/> 
       </div> 
   </>
 )

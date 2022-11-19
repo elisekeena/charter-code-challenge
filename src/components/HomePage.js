@@ -25,17 +25,12 @@ function HomePage({movieData, genresData}) {
     
     return (
       <div style={{textAlign: "center"}}>
-        <div style={{ 
-        textAlign: "center",
-        backgroundRepeat: "round",
-        }}>
+
         <h1 className = "tagName" >CINEFLIX </h1>
         <hr></hr>
-        </div>
-      
         <Search searchInput={searchInput} setSearchInput={setSearchInput} />
         <Filter filterGenre={filterGenre} setFilterGenre={setFilterGenre} genresData={genresData} />
-        {result.length === 0 && <h1> No results were found. </h1> }
+        {result.length === 0 && <h1 style={{textAlign: "center", color: "white"}}> No results were found. </h1> }
         {(searchInput === "" && filterGenre === "") ? <MovieList movieData={movieData}/> : <MovieList movieData={result} />}
         <Footer/>
         </div>
